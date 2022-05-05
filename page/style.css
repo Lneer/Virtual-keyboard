@@ -12,7 +12,7 @@ html {
 .keyboard-container {
   position: fixed;
   left: 0%;
-  bottom: 0;
+  bottom: 50px;
   width: 100%;
   height: auto;
   max-width: 128rem;
@@ -24,18 +24,36 @@ html {
   margin: 0 auto;
   background-color: gray;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.keyboard-keys-row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .keyboard-key {
   color: red;
-  margin: 5px;
+  margin: 6px;
   font-size: 1.8rem;
   width: 5%;
-  padding: 20px 20px;
+  padding: 20px 0;
   max-width: 100px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -56,12 +74,14 @@ html {
 }
 
 .keyboard-key--large {
+  max-width: none;
   width: 10%;
-  min-width: 100px;
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
 }
 
-.keyboard-key--extralarge {
-  width: 30%;
-  max-width: 1200px;
+.keyboard-key--RCtrl {
+  width: 10%;
 }
 /*# sourceMappingURL=style.css.map */
