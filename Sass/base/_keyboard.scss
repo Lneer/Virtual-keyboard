@@ -1,15 +1,24 @@
 .keyboard-container{
     position: fixed;
     left: 0%;
-    
+    display: flex;
+    flex-direction: column;
     bottom: 50px;  
     width: 100%;
     height: auto;
     max-width: $keyboard-max-width;
     background: transparent;
+    row-gap: 10px;
 }
 
-
+.textarea{
+    width: 90%;
+    margin: 0 auto;
+    resize: none;
+    background-color: $keyboard-background-color;
+    font-size: 3.2rem;
+    color: red;
+}
 .keyboard-keys{
     width: 90%;
     margin: 0 auto;
@@ -30,7 +39,7 @@
     color: red;
     margin: 6px;
     font-size: 1.8rem;
-    width: 5%;
+    width: 5.55%;
     padding: 20px 0;
     max-width: 100px;
     display: flex;
@@ -51,11 +60,11 @@
     &--large{
         max-width: none; 
         width: 10%;
-        flex-grow: 10;       
+        flex-grow: 10;     
     }
 
     &--RCtrl{
-        width: 10%;
+        width: 5.55%;
     }
 
 }
