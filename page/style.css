@@ -85,7 +85,8 @@ html {
 }
 
 .keyboard-key:active {
-  background-color: rgba(91, 91, 94, 0.5);
+  background-color: red;
+  color: #5b5b5e;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -100,5 +101,16 @@ html {
 
 .keyboard-key--RCtrl {
   width: 5.55%;
+}
+
+.activable {
+  background-color: red;
+  color: #5b5b5e;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
