@@ -160,22 +160,20 @@ class Keyboard {
     return this;
   };
 }
-const lan = sessionStorage.getItem('lang');
-let setting = {};
-if (lan === 'undefined') {
-  setting = {
-    currentLanguage: 'eng',
-    isLower: true,
-    isCaps: false,
-  };
+
+const setting = {
+  currentLanguage: null,
+  isLower: true,
+  isCaps: false,
+};
+
+if (!sessionStorage.getItem('keyLan')) {
+  setting.currentLanguage = 'eng';
 } else {
-  setting = {
-    currentLanguage: lan,
-    isLower: true,
-    isCaps: false,
-  };
+  setting.currentLanguage = sessionStorage.getItem('keyLan');
 }
-window.sessionStorage.setItem('lang', setting.currentLanguage);
+
+sessionStorage.setItem('keyLan', `${setting.currentLanguage}`);
 
 const nonPrintableButton = ['Tab', 'Backspace', 'CapsLock', 'Shift', 'Enter', 'Space', 'Alt', 'Delete', 'Control', 'OS', 'Ctrl', 'Del'];
 const currentKeyboard = new Keyboard([en, ru]);
@@ -227,7 +225,8 @@ const keyPress = (event) => {
     } else {
       setting.currentLanguage = 'eng';
     }
-    window.sessionStorage.setItem('lang', setting.currentLanguage);
+
+    sessionStorage.setItem('keyLan', `${setting.currentLanguage}`);
     currentKeyboard.keyPush(setting);
   }
   if (event.code === 'Tab') {
@@ -317,7 +316,7 @@ const mousePress = (event) => {
       } else {
         setting.currentLanguage = 'eng';
       }
-      window.sessionStorage.setItem('lang', setting.currentLanguage);
+      window.sessionStorage.setItem('keyLan', setting.currentLanguage);
       currentKeyboard.keyPush(setting);
     }
     ctrlKey = false;
@@ -330,7 +329,7 @@ const mousePress = (event) => {
       } else {
         setting.currentLanguage = 'eng';
       }
-      window.sessionStorage.setItem('lang', setting.currentLanguage);
+      window.sessionStorage.setItem('keyLan', setting.currentLanguage);
       currentKeyboard.keyPush(setting);
     }
     altKey = false;
